@@ -1,3 +1,5 @@
+
+```mermaid
 erDiagram
     TASKS {
         SERIAL id PK
@@ -5,3 +7,4 @@ erDiagram
         BOOLEAN completed
         TIMESTAMP created_at
     }
+```
