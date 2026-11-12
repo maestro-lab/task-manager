@@ -1,12 +1,11 @@
-
 const { app, pool } = require('./app');
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 pool.query('SELECT NOW()')
     .then(() => console.log('Подключение к PostgreSQL успешно'))
-    .catch((error) => console.error('Ошибка PostgreSQL:', error.message));
+    .catch((error) => console.error('Ошибка PostgreSQL:', error));
 
-app.listen(PORT, () => {
-    console.log(`Сервер запущен: http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Сервер запущен на порту ${PORT}`);
 });
